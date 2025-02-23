@@ -1,5 +1,5 @@
 function Hero() {
-  return (
+  return ( 
     <div className="relative w-full h-screen flex text-white text-center">
       <div className="absolute inset-0 bg-gradient-to-r from-[#071629]/100 z-10" />
 

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
-import { IoIosContact, IoIosContacts, IoIosInformationCircleOutline, IoMdContact } from "react-icons/io";
+import { IoIosInformationCircleOutline } from "react-icons/io";
 import { IoLogInOutline } from "react-icons/io5";
 import { LuContactRound } from "react-icons/lu";
 import { RxCross2 } from "react-icons/rx";

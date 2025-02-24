@@ -8,7 +8,7 @@ function HowWorks() {
             </h1>
 
             <ol className='p-4 flex w-full justify-center items-center gap-5 flex-wrap'>
-                <li className='flex flex-col items-center justify-center mb-6 border-2 rounded-lg h-44 w-[500px] p-6'>
+                <li className='flex flex-col items-center justify-center mb-6 border-2 rounded-lg h-44 w-[500px] p-6 bg-[#000c1b]' >
                     <h3 className='text-xl font-semibold mb-2  text-left w-full '>
                         1. Apply Online
                     </h3>
@@ -16,7 +16,7 @@ function HowWorks() {
                         Fill out a quick online application form with basic personal information. It only takes a few minutes.
                     </p>
                 </li>
-                <li className='flex flex-col items-center justify-center mb-6 border-2 rounded-lg h-44 w-[500px] p-6'>
+                <li className='flex flex-col items-center justify-center mb-6 border-2 rounded-lg h-44 w-[500px] p-6 bg-[#000c1b]'>
                     <h3 className='text-xl font-semibold mb-2  text-left w-full '>
                         2. Login
                     </h3>
@@ -24,7 +24,7 @@ function HowWorks() {
                         We’ll review your application and get back to you quickly. You will receive a decision in as little as 24 hours.
                     </p>
                 </li>
-                <li className='flex flex-col items-center justify-center mb-6 border-2 rounded-lg h-44 w-[500px] p-6'>
+                <li className='flex flex-col items-center justify-center mb-6 border-2 rounded-lg h-44 w-[500px] p-6 bg-[#000c1b]'>
                     <h3 className='text-xl font-semibold mb-2  text-left w-full '>
                         3. Receive Funds
                     </h3>

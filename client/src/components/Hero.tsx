@@ -15,7 +15,7 @@ function Hero() {
           style={{ backgroundImage: "url('/kaaba-mobile.jpg')" }}
         />
 
-        <div className="z-10 max-w-3xl px-6 md:pl-16 ">
+        <div className="z-10 max-w-3xl px-6 md:pl-28 ">
           <h1 className="text-4xl md:text-5xl font-bold text-left">
             We believe in Islamic Finance & Qarz-e-Hasana !
           </h1>
@@ -23,7 +23,7 @@ function Hero() {
             Need funds for Education, Home construction, or Business needs? We’ve got you covered with Halal Loans & Without Interest.
           </p>
           <Link href={"/explore"} >
-            <button className="mt-4 text-sm text-left bg-white text-[#081b33] p-1 border-2 rounded-3xl  px-4 font-bold flex gap-2  items-center justify-center">
+            <button className="mt-4 text-sm text-left bg-white text-[#081b33] p-2 border-2 rounded-3xl  px-6 font-bold flex gap-2  items-center justify-center">
               Explore
               <FaArrowTrendUp />
             </button>

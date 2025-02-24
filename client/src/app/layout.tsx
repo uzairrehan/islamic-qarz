@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Islamic Qarz & Finance",
-  description: "A simple and easy-to-use platform(Web App) for managing interest-free Islamic loans (Qarz-e-Hasana) with Applicant and Admin dashboard.p",
+  description: "A simple and easy-to-use platform for managing interest-free Islamic loans with Applicant and Admin dashboard.",
 };
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#071629]`}
       >
         {children}
       </body>

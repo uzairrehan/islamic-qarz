@@ -10,7 +10,7 @@ function FAQs() {
             <div className='flex items-center justify-center flex-col md:w-full gap-1 mx-2' >
                 {
                     FAQ.map(({ qst, ans }, index) => (
-                        <details key={index} className='bg-[#000c1b] px-2 w-full md:w-3/5 rounded-lg py-2'>
+                        <details key={index} className='bg-[#000c1b]  w-full md:w-3/5 rounded-lg p-2'>
                             <summary className='font-extrabold text-sm md:text-lg hover:cursor-pointer '>
                                 {qst}
                             </summary>

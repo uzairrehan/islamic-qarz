@@ -3,7 +3,10 @@ import React from 'react';
 function HowWorks() {
     return (
         <>
-            <h1 className='text-center text-3xl md:text-5xl py-12 font-extrabold'>
+        <div className='bg-white relative'>
+        {/* <div className="absolute inset-0 bg-gradient-to-b from-[#071629]/100 -z-0" /> */}
+
+            <h1 className='text-center text-3xl md:text-5xl py-12 font-extrabold text-[#000c1b] '>
                 How it works?
             </h1>
 
@@ -33,6 +36,7 @@ function HowWorks() {
                     </p>
                 </li>
             </ol>
+        </div>
         </>
     );
 }

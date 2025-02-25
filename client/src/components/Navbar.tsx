@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { FaArrowTrendUp, FaCircleInfo } from "react-icons/fa6";
+import { GoHomeFill } from "react-icons/go";
 import { IoLogInOutline } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
@@ -14,31 +15,37 @@ function Navbar() {
 
   return (
     <>
-      <nav className={` text-white w-full flex flex-nowrap items-center justify-center fixed top-0 backdrop-blur z-50 shadow-md ${!open ? "h-60" : "h-16"}`}>
+      <nav className={`text-white w-full flex flex-nowrap items-center justify-center fixed top-0 backdrop-blur z-50 shadow-md ${!open ? "h-72" : "h-16"}`}>
         <div className="md:flex w-5/6 items-center justify-between px-2 hidden">
-        <Link href={"/"}>
-          <Image
-            src={"/logo.png"}
-            alt={"Islamic Qarz"}
-            width={80}
-            height={80}
-          />
+          <Link href={"/"}>
+            <Image
+              src={"/logo.png"}
+              alt={"Islamic Qarz"}
+              width={80}
+              height={80}
+            />
           </Link>
           <ul className="hidden items-center justify-between w-auto gap-6 text-md md:flex">
+            <Link href={"/"} className="flex gap-1 items-center justify-center">
+              <li>Home</li>
+              <GoHomeFill
+                className="size-4" />
+            </Link>
+
             <Link href={"/explore"} className="flex gap-1 items-center justify-center">
               <li>Explore</li>
-              <FaArrowTrendUp 
-              className="size-4" />
+              <FaArrowTrendUp
+                className="size-4" />
             </Link>
             <Link href={"/about"} className="flex gap-1 items-center justify-center">
               <li> About </li>
-              <FaCircleInfo 
-              className="size-4" />
+              <FaCircleInfo
+                className="size-4" />
             </Link>
             <Link href={"/contact"} className="flex gap-1 items-center justify-center">
               <li>Contact</li>
               <MdEmail
-              className="size-4" />
+                className="size-4" />
             </Link>
             <li>
               <Link href={"/login"}>
@@ -56,33 +63,38 @@ function Navbar() {
 
         <div className="flex items-center justify-center md:hidden w-full ">
           <div className="flex w-4/5 items-center justify-between px-2">
-            <Image
-              src={"/logo.png"}
-              alt={"Islamic Qarz"}
-              width={80}
-              height={80}
-              className="self-start"
-            />
+            <Link href={"/"} className="self-start">
+              <Image
+                src={"/logo.png"}
+                alt={"Islamic Qarz"}
+                width={80}
+                height={80}
+
+              />
+            </Link>
             {
               !open ?
-                <ul className="items-center justify-around w-auto gap-4 text-md flex flex-col trans">
+                <ul className="items-center justify-around w-auto gap-4 text-md flex flex-col">
                   <RxCross2 onClick={() => { setOpen(!open) }} className="size-6 self-end" />
-                  <Link href={"/explore"} className="flex gap-1 items-center justify-evenly w-4/5">
+                  <Link href={"/"} className="flex gap-1 items-center justify-between w-4/5">
+                    <li>Home</li>
+                    <GoHomeFill
+                      className="size-4" />
+                  </Link>
+                  <Link href={"/explore"} className="flex gap-1 items-center justify-between w-4/5">
                     <li>Explore</li>
-                    
-              <FaArrowTrendUp 
-              className="size-4" />
+                    <FaArrowTrendUp
+                      className="size-4" />
                   </Link>
-                  <Link href={"/about"} className="flex gap-1 items-center justify-evenly w-4/5">
+                  <Link href={"/about"} className="flex gap-1 items-center justify-between w-4/5">
                     <li>&nbsp; About </li>
-                    
-              <FaCircleInfo 
-              className="size-4" />
+                    <FaCircleInfo
+                      className="size-4" />
                   </Link>
-                  <Link href={"/contact"} className="flex gap-1 items-center justify-evenly w-4/5">
+                  <Link href={"/contact"} className="flex gap-1 items-center justify-between w-4/5">
                     <li>Contact</li>
                     <MdEmail
-              className="size-4" />
+                      className="size-4" />
                   </Link>
                   <li>
                     <Link href={"/login"}>

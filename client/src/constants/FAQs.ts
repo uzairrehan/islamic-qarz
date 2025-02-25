@@ -1,6 +1,6 @@
 import { FAQsType } from "@/types/FAQsType";
 
-export const FAQ:FAQsType[] = [
+export const FAQ: FAQsType[] = [
     {
         qst: "What types of loans do you offer?",
         ans: "We offer Education loans, Wedding loans, Business loans, and Home Construction loans. You can view more details on each type of loan on our loan explore page."

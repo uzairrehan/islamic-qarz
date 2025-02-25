@@ -1,3 +1,4 @@
+import Navbar from '@/components/Navbar'
 import Image from 'next/image'
 import React from 'react'
 import { BiSend } from 'react-icons/bi'
@@ -5,6 +6,8 @@ import { BiSend } from 'react-icons/bi'
 function Contact() {
   return (
     <>
+      <Navbar />
+
       <div className='h-16 bg-[#081b33] ' />
       <div className='flex flex-col md:flex-row w-full justify-between items-center'>
         <div className='w-full md:w-1/2 flex justify-center items-center px-4'>

@@ -14,7 +14,7 @@ function FAQs() {
                             <summary className='font-extrabold text-sm md:text-lg hover:cursor-pointer '>
                                 {qst}
                             </summary>
-                            <p className='pt-2 pl-3'>
+                            <p className='pt-2 text-sm'>
                                 {ans}
                             </p>
                         </details>

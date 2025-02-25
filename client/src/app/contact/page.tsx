@@ -12,7 +12,7 @@ function Contact() {
             <h1 className='text-start text-2xl md:text-5xl pt-12 font-extrabold '>
               Got a Question?
             </h1>
-            <p className=' text-sm text-start text-slate-300 w-2/3 py-8'>We're here to help! Feel free to reach out to us, and we'll get back to you via email. <br />Whether you have a question, feedback, or just want to say hello, don't hesitate to contact us!</p>
+            <p className=' text-sm text-start text-slate-300 w-2/3 py-8'>We&apos;re here to help! Feel free to reach out to us, and we&apos;ll get back to you via email. <br />Whether you have a question, feedback, or just want to say hello, don&apos;t hesitate to contact us!</p>
             <Image src={'/customer.avif'} alt='contact us image' height={400} width={400} className='rounded-lg' />
           </div>
         </div>

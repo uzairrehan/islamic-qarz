@@ -5,12 +5,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { FaArrowTrendUp, FaCircleInfo } from "react-icons/fa6";
-import { IoIosInformationCircleOutline } from "react-icons/io";
 import { IoLogInOutline } from "react-icons/io5";
-import { LuContactRound } from "react-icons/lu";
-import { MdEmail, MdOutlineEmail } from "react-icons/md";
+import { MdEmail } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
-import { SiWpexplorer } from "react-icons/si";
 
 function Navbar() {
   const [open, setOpen] = useState<boolean>(true)

@@ -4,7 +4,7 @@ import Card from './Card'
 function AllCards() {
     return (
         <>
-            <div className='w-full'>
+            <div className='w-full pb-16'>
                 <h1 className='text-center text-3xl md:text-5xl py-12 font-extrabold '>Our Loan Options</h1>
                 <div className="flex gap-2 flex-wrap bg-transparent justify-center items-center w-full ">
                     <Card name={"Wedding Loan"} link={"/explore/wedding-loan"} desc={""} img={"/wedding.jpg"} />

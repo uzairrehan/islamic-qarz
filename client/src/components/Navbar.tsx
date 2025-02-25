@@ -17,12 +17,14 @@ function Navbar() {
     <>
       <nav className={` text-white w-full flex flex-nowrap items-center justify-center fixed top-0 backdrop-blur z-50 shadow-md ${!open ? "h-60" : "h-16"}`}>
         <div className="md:flex w-5/6 items-center justify-between px-2 hidden">
+        <Link href={"/"}>
           <Image
             src={"/logo.png"}
             alt={"Islamic Qarz"}
             width={80}
             height={80}
           />
+          </Link>
           <ul className="hidden items-center justify-between w-auto gap-4 text-md md:flex">
             <Link href={"/explore"} className="flex gap-1 items-center justify-center">
               <SiWpexplorer className="size-4" />

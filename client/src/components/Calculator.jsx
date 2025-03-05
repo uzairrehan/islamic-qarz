@@ -53,7 +53,7 @@ function Calculator() {
               className="text-black"
               value={subCategory}
             >
-              {subCat[category]?.map((val: string, index: number) => {
+              {subCat[category]?.map((val, index) => {
                 return (
                   <option key={index} value={val}>
                     {val} Loan

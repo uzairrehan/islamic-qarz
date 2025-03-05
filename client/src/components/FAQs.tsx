@@ -1,4 +1,3 @@
-import React from 'react'
 import { FAQ } from '@/constants/FAQs'
 function FAQs() {
 

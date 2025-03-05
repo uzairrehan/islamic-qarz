@@ -1,47 +1,16 @@
 import Navbar from "@/components/Navbar";
 import React from "react";
 import Image from "next/image";
+import { loanData } from "@/constants/Loans";
+import Calculator from "@/components/Calculator";
 
-const loanData = [
-  {
-    id: "wedding",
-    title: "Wedding Loans",
-    image: "/wedding.jpg",
-    subcategories: "Valima, Furniture Jahez",
-    maxLoan: "PKR 5 Lakh",
-    loanPeriod: "3 years",
-  },
-  {
-    id: "home",
-    title: "Home Loans",
-    image: "/construction.jpeg",
-    subcategories: "Structure, Finishing",
-    maxLoan: "PKR 10 Lakh",
-    loanPeriod: "5 years",
-  },
-  {
-    id: "business",
-    title: "Business Loans",
-    image: "/business.jpg",
-    subcategories: "Buy Stall, Advance Rent, Shop Assets",
-    maxLoan: "PKR 10 Lakh",
-    loanPeriod: "5 years",
-  },
-  {
-    id: "education",
-    title: "Education Loans",
-    image: "/education.jpg",
-    subcategories: "University Fees, Child Fees Loan",
-    maxLoan: "PKR 5 Lakh",
-    loanPeriod: "4 years",
-  },
-];
 
 function Explore() {
   return (
     <>
       <Navbar />
       <div className="h-16 bg-[#081b33] " />
+      <Calculator/>
       <div className="flex justify-evenly items-center flex-col mx-5">
         {loanData.map((loan) => (
           <div key={loan.id}>

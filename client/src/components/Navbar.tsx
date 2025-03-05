@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
-import { FaArrowTrendUp, FaCircleInfo } from "react-icons/fa6";
+import { FaArrowTrendUp } from "react-icons/fa6";
 import { GoHomeFill } from "react-icons/go";
 import { IoLogInOutline } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
@@ -17,7 +17,7 @@ function Navbar() {
     <>
       <nav
         className={`text-white w-full flex flex-nowrap items-center justify-center fixed top-0 backdrop-blur z-50 shadow-md ${
-          !open ? "h-72" : "h-16"
+          !open ? "h-64" : "h-16"
         }`}
       >
         <div className="md:flex w-5/6 items-center justify-between px-2 hidden">
@@ -42,13 +42,7 @@ function Navbar() {
               <li>Explore</li>
               <FaArrowTrendUp className="size-4" />
             </Link>
-            <Link
-              href={"/about"}
-              className="flex gap-1 items-center justify-center"
-            >
-              <li> About </li>
-              <FaCircleInfo className="size-4" />
-            </Link>
+
             <Link
               href={"/contact"}
               className="flex gap-1 items-center justify-center"
@@ -99,13 +93,7 @@ function Navbar() {
                   <li>Explore</li>
                   <FaArrowTrendUp className="size-4" />
                 </Link>
-                <Link
-                  href={"/about"}
-                  className="flex gap-1 items-center justify-between w-4/5"
-                >
-                  <li>&nbsp; About </li>
-                  <FaCircleInfo className="size-4" />
-                </Link>
+
                 <Link
                   href={"/contact"}
                   className="flex gap-1 items-center justify-between w-4/5"

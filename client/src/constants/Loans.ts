@@ -1,9 +1,8 @@
-import LoanType, { maxAmountType, MaxPerType, SubCatType } from "@/types/loanType";
-
-
-
-
-
+import LoanType, {
+  maxAmountType,
+  MaxPerType,
+  SubCatType,
+} from "@/types/loanType";
 
 export const subCat: SubCatType = {
   Wedding: ["Valima", "Furniture", "Valima Food", "Jahez"],

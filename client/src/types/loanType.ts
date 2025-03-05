@@ -5,27 +5,23 @@ export default interface LoanType {
     maxPer:number
 }
 
-
-
 export interface SubCatType {
     Wedding: string[];
     Home: string[];
     Business: string[];
     Education: string[];
   }
-  
-  export interface MaxPerType {
+
+export interface MaxPerType {
     Wedding: number;
     Home: number;
     Business: number;
     Education: number;
-  }
+}
   
-  export interface maxAmountType {
+export interface maxAmountType {
     Wedding: number;
     Home: number;
     Business: number;
     Education: number;
-  }
-  
-  
+}  

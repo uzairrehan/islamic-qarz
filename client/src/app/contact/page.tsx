@@ -7,7 +7,6 @@ function Contact() {
   return (
     <>
       <Navbar />
-
       <div className="h-16 bg-[#081b33] " />
       <div className="flex flex-col md:flex-row w-full justify-between items-center">
         <div className="w-full md:w-1/2 flex justify-center items-center px-4">

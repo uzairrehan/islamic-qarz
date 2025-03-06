@@ -7,6 +7,7 @@ import {
   subCat,
 } from "@/constants/Loans";
 import React, { useState } from "react";
+import { BiSend } from "react-icons/bi";
 
 function Calculator() {
   const [category, setCategory] = useState<CategoryType>("Wedding");
@@ -14,23 +15,35 @@ function Calculator() {
   const [period, setPeriod] = useState(1);
   const [amount, setAmount] = useState(0);
   const [initDeposit, setInitDeposit] = useState(0);
+  const [text, setText] = useState("");
+  const [calculated, setCalculated] = useState<undefined | CalculatedType>(
+    undefined
+  );
 
   type CategoryType = "Wedding" | "Home" | "Business" | "Education";
-
+  interface CalculatedType {
+    category: string;
+    subCategory: string;
+    period: number;
+    totalAmount: number;
+    initialDeposit: number;
+    totalMonth: number;
+    permonthAmount: number;
+  }
   function handleCalculate() {
     if (!category || !subCategory || !period || !amount || !initDeposit) {
-      return console.log("all fields are required");
+      return setText("All fields are required!");
     }
     if (period > maxPer[category]) {
-      return console.log("period kam karo");
+      return setText("Period invalid!");
     }
     if (amount > maxAmount[category]) {
-      return console.log("amount kam karo");
+      return setText("Amount invalid");
     }
     if (initDeposit < InitialDepositConstant) {
-      return console.log("init deposit must be 50000");
+      return setText("Initial deposit must be 50000");
     }
-
+    setText("");
     const totalMonth = period * 12;
     const permonthAmount = (amount - initDeposit) / totalMonth;
 
@@ -43,22 +56,20 @@ function Calculator() {
       totalMonth: totalMonth,
       permonthAmount: permonthAmount,
     };
-
-    console.log("====================================");
-    console.log(result);
-    console.log("====================================");
+    setCalculated(result as CalculatedType);
   }
 
   return (
     <>
-      <div>
-        <div>
-          <h1>Loan Calculator</h1>
-          <p>Calculate your estimated loan breakdown</p>
+      <div className="max-w-3xl mx-auto p-6 ">
+        <div className="text-center mb-6">
+          <h1 className="text-center text-3xl md:text-5xl py-12 font-extrabold">
+            Loan Calculator
+          </h1>
         </div>
-        <div>
-          <label htmlFor="category">
-            <h2>Loan Category</h2>
+        <div className="space-y-4">
+          <label htmlFor="category" className="block">
+            <h2 className="text-xs md:text-xl font-extrabold mb-1">Category</h2>
             <select
               required
               name="category"
@@ -66,7 +77,7 @@ function Calculator() {
               onChange={(e) => {
                 setCategory(e.target.value as CategoryType);
               }}
-              className="text-black"
+              className="w-full mt-1 h-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-black"
               value={category}
             >
               {Loans?.map(({ cat }, index) => {
@@ -79,8 +90,10 @@ function Calculator() {
             </select>
           </label>
 
-          <label htmlFor="sub-category">
-            <h2>Loan SubCategory</h2>
+          <label htmlFor="sub-category" className="block">
+            <h2 className="text-xs md:text-xl font-extrabold mb-1">
+              SubCategory
+            </h2>
             <select
               name="sub-category"
               id="sub-category"
@@ -88,7 +101,7 @@ function Calculator() {
               onChange={(e) => {
                 setSubCategory(e.target.value);
               }}
-              className="text-black"
+              className="w-full mt-1  h-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-black"
               value={subCategory}
             >
               {subCat[category]?.map((val, index) => {
@@ -101,14 +114,16 @@ function Calculator() {
             </select>
           </label>
 
-          <label htmlFor="period">
-            <h2>Loan Period in Years</h2>
+          <label htmlFor="period" className="block">
+            <h2 className="text-xs md:text-xl font-extrabold mb-1">
+              Period in Years (max {maxPer[category]} year)
+            </h2>
             <input
               type="number"
               required
               name="period"
               id="period"
-              className="text-black"
+              className="w-full mt-1  h-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-black"
               min={1}
               max={maxPer[category]}
               onChange={(e) => {
@@ -118,14 +133,16 @@ function Calculator() {
             />
           </label>
 
-          <label htmlFor="amount">
-            <h2>Loan Amount</h2>
+          <label htmlFor="amount" className="block">
+            <h2 className="text-xs md:text-xl font-extrabold mb-1">
+              Total Amount you want
+            </h2>
             <input
               type="number"
               name="amount"
               required
               id="amount"
-              className="text-black"
+              className="w-full mt-1  h-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-black"
               min={0}
               max={maxAmount[category]}
               onChange={(e) => {
@@ -135,14 +152,16 @@ function Calculator() {
             />
           </label>
 
-          <label htmlFor="init-deposit">
-            <h2>Initial Deposit</h2>
+          <label htmlFor="init-deposit" className="block">
+            <h2 className="text-xs md:text-xl font-extrabold mb-1">
+              Initial Deposit (min {InitialDepositConstant})
+            </h2>
             <input
               type="number"
               required
               name="init-deposit"
               id="init-deposit"
-              className="text-black"
+              className="w-full mt-1 h-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-black"
               min={0}
               max={maxAmount[category]}
               onChange={(e) => {
@@ -151,9 +170,18 @@ function Calculator() {
               value={initDeposit}
             />
           </label>
-          <button type="button" onClick={handleCalculate}>
+          <p className=" w-full mt-4 text-sm text-center  text-red-600 p-2 px-6 font-bold">
+            {text && text}
+          </p>
+          <button
+            type="button"
+            onClick={handleCalculate}
+            className="w-full mt-4 text-sm  bg-white text-[#081b33] p-2 border-2 rounded-3xl  px-6 font-bold flex gap-2  items-center justify-center hover:bg-slate-300 transition"
+          >
             Calculate
+            <BiSend className="size-4" />
           </button>
+          <div>{calculated?.category}</div>
         </div>
       </div>
     </>

@@ -30,7 +30,6 @@ export const maxAmount: maxAmountType = {
   Education: 500000,
 };
 
-
 export const loanData = [
   {
     id: "wedding",
@@ -65,6 +64,8 @@ export const loanData = [
     loanPeriod: "4 years",
   },
 ];
+
+export const InitialDepositConstant = 50000;
 
 export const Loans: LoanType[] = [
   {

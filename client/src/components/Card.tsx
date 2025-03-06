@@ -21,7 +21,7 @@ function Card({ name, link, img, desc }: CardTypes) {
                 <div className='backdrop-blur px-2 border-2 z-30 rounded-2xl w-4/5 flex flex-row justify-center items-center gap-4 h-14 -translate-y-6 shadow-sm shadow-[#071629]'>
                     <h2 className='font-bold text-sm md:text-md '>{name}</h2>
                     <Link href={link}>
-                        <button className="text-sm text-left bg-white text-[#081b33] p-1 border-2 rounded-3xl  px-4 font-bold flex gap-2  items-center justify-center">
+                        <button className="text-sm text-left bg-white text-[#081b33] p-1 border-2 rounded-3xl  px-4 font-bold flex gap-2  items-center justify-center hover:bg-slate-300 transition">
                             More Info
                             <FaArrowTrendUp />
                         </button>

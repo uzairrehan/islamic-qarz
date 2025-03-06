@@ -61,7 +61,7 @@ function Contact() {
               </label>
               <button
                 type="button"
-                className="mt-4 text-sm text-left bg-white text-[#081b33] p-2 border-2 rounded-3xl  px-6 font-bold flex gap-2  items-center justify-center"
+                className="mt-4 text-sm text-left bg-white text-[#081b33] p-2 border-2 rounded-3xl  px-6 font-bold flex gap-2  items-center justify-center hover:bg-slate-300 transition"
               >
                 Send
                 <BiSend className="size-4" />

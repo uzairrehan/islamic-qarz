@@ -52,7 +52,7 @@ function Navbar() {
             </Link>
             <li>
               <Link href={"/login"}>
-                <button className="bg-white text-[#081b33] p-1 border-2 rounded-3xl ml-8 px-4 font-bold flex gap-2  items-center justify-center">
+                <button className="bg-white text-[#081b33] p-1 border-2 rounded-3xl ml-8 px-4 font-bold flex gap-2  items-center justify-center hover:bg-slate-300 transition">
                   Login
                   <IoLogInOutline className="size-4" />
                 </button>
@@ -103,7 +103,7 @@ function Navbar() {
                 </Link>
                 <li>
                   <Link href={"/login"}>
-                    <button className="bg-white text-[#081b33] p-2 border-2 rounded-3xl px-4 font-bold flex gap-4 items-center ">
+                    <button className="bg-white text-[#081b33] p-2 border-2 rounded-3xl px-4 font-bold flex gap-4 items-center hover:bg-slate-300 transition ">
                       Login
                       <IoLogInOutline className="size-5" />
                     </button>

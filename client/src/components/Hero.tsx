@@ -23,7 +23,7 @@ function Hero() {
             Need funds for Education, Home construction, or Business needs? We’ve got you covered with Halal Loans & Without Interest.
           </p>
           <Link href={"/explore"} >
-            <button className="mt-4 text-sm text-left bg-white text-[#081b33] p-2 border-2 rounded-3xl  px-6 font-bold flex gap-2  items-center justify-center">
+            <button className="mt-4 text-sm text-left bg-white text-[#081b33] p-2 border-2 rounded-3xl  px-6 font-bold flex gap-2  items-center justify-center hover:bg-slate-300 transition">
               Explore
               <FaArrowTrendUp />
             </button>

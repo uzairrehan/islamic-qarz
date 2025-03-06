@@ -43,6 +43,9 @@ function Calculator() {
     if (initDeposit < InitialDepositConstant) {
       return setText("Initial deposit must be 50000");
     }
+    if (initDeposit < amount) {
+      return setText("Initial deposit must be less than total amount");
+    }
     setText("");
     const totalMonth = period * 12;
     const permonthAmount = (amount - initDeposit) / totalMonth;
@@ -135,7 +138,7 @@ function Calculator() {
 
           <label htmlFor="amount" className="block">
             <h2 className="text-xs md:text-xl font-extrabold mb-1">
-              Total Amount you want
+              Total Amount you want (max {maxAmount[category]}pkr)
             </h2>
             <input
               type="number"
@@ -181,7 +184,8 @@ function Calculator() {
             Calculate
             <BiSend className="size-4" />
           </button>
-          <div className="p-4  rounded-lg shadow-md  ">
+              {
+                calculated && <div className="p-4 rounded-lg">
             <p className="font-semibold">
               Category:{" "}
               <span className="font-normal">{calculated?.category}</span>
@@ -196,11 +200,11 @@ function Calculator() {
             </p>
             <p className="font-semibold">
               Total Amount:{" "}
-              <span className="font-normal">₹{calculated?.totalAmount}</span>
+              <span className="font-normal">{calculated?.totalAmount}pkr</span>
             </p>
             <p className="font-semibold">
               Initial Deposit:{" "}
-              <span className="font-normal">₹{calculated?.initialDeposit}</span>
+              <span className="font-normal">{calculated?.initialDeposit}pkr</span>
             </p>
             <p className="font-semibold">
               Total Months:{" "}
@@ -208,9 +212,10 @@ function Calculator() {
             </p>
             <p className="font-semibold">
               Per Month Amount:{" "}
-              <span className="font-normal">₹{calculated?.permonthAmount}</span>
+              <span className="font-normal">{calculated?.permonthAmount}pkr</span>
             </p>
           </div>
+  }
         </div>
       </div>
     </>

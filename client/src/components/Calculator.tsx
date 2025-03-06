@@ -181,7 +181,36 @@ function Calculator() {
             Calculate
             <BiSend className="size-4" />
           </button>
-          <div>{calculated?.category}</div>
+          <div className="p-4  rounded-lg shadow-md  ">
+            <p className="font-semibold">
+              Category:{" "}
+              <span className="font-normal">{calculated?.category}</span>
+            </p>
+            <p className="font-semibold">
+              SubCategory:{" "}
+              <span className="font-normal">{calculated?.subCategory}</span>
+            </p>
+            <p className="font-semibold">
+              Period:{" "}
+              <span className="font-normal">{calculated?.period} years</span>
+            </p>
+            <p className="font-semibold">
+              Total Amount:{" "}
+              <span className="font-normal">₹{calculated?.totalAmount}</span>
+            </p>
+            <p className="font-semibold">
+              Initial Deposit:{" "}
+              <span className="font-normal">₹{calculated?.initialDeposit}</span>
+            </p>
+            <p className="font-semibold">
+              Total Months:{" "}
+              <span className="font-normal">{calculated?.totalMonth}</span>
+            </p>
+            <p className="font-semibold">
+              Per Month Amount:{" "}
+              <span className="font-normal">₹{calculated?.permonthAmount}</span>
+            </p>
+          </div>
         </div>
       </div>
     </>

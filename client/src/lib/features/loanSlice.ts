@@ -1,10 +1,7 @@
-import { CalculatedType } from "@/types/loanType";
+import { CalculatedType, LoanState } from "@/types/loanType";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-export interface LoanState {
-  value: CalculatedType | {};
-}
 
 const initialState: LoanState = {
   value: {},

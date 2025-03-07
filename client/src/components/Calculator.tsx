@@ -1,12 +1,6 @@
 "use client";
-import {
-  InitialDepositConstant,
-  Loans,
-  maxAmount,
-  maxPer,
-  subCat,
-} from "@/constants/Loans";
-import { addLoan, deleteLoan, selectCount } from "@/lib/features/loanSlice";
+import { InitialDepositConstant, Loans, maxAmount, maxPer, subCat } from "@/constants/Loans";
+import { addLoan, selectCount } from "@/lib/features/loanSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { CalculatedType, CategoryType } from "@/types/loanType";
 import React, { useState } from "react";
@@ -20,10 +14,8 @@ function Calculator() {
   const [initDeposit, setInitDeposit] = useState(0);
   const [text, setText] = useState("");
   const [calculated, setCalculated] = useState<undefined | CalculatedType>(undefined);
-  const value = useAppSelector(selectCount)
-  const dispatch = useAppDispatch()
-
-
+  const value = useAppSelector(selectCount);
+  const dispatch = useAppDispatch();
 
   function handleCalculate() {
     if (!category || !subCategory || !period || !amount || !initDeposit) {
@@ -42,9 +34,10 @@ function Calculator() {
       return setText("Initial deposit must be less than total amount");
     }
     setText("");
+
+
     const totalMonth = period * 12;
     const permonthAmount = (amount - initDeposit) / totalMonth;
-
     const result = {
       category: category,
       subCategory: subCategory,
@@ -54,10 +47,11 @@ function Calculator() {
       totalMonth: totalMonth,
       permonthAmount: permonthAmount,
     };
+
     setCalculated(result as CalculatedType);
-    dispatch(addLoan(result))
+    dispatch(addLoan(result));
   }
-  console.log('================from state====================');
+  console.log("================from state====================");
   console.log(value);
   return (
     <>
@@ -181,38 +175,44 @@ function Calculator() {
             Calculate
             <BiSend className="size-4" />
           </button>
-              {
-                calculated && <div className="p-4 rounded-lg">
-            <p className="font-semibold">
-              Category:{" "}
-              <span className="font-normal">{calculated?.category}</span>
-            </p>
-            <p className="font-semibold">
-              SubCategory:{" "}
-              <span className="font-normal">{calculated?.subCategory}</span>
-            </p>
-            <p className="font-semibold">
-              Period:{" "}
-              <span className="font-normal">{calculated?.period} years</span>
-            </p>
-            <p className="font-semibold">
-              Total Amount:{" "}
-              <span className="font-normal">{calculated?.totalAmount}pkr</span>
-            </p>
-            <p className="font-semibold">
-              Initial Deposit:{" "}
-              <span className="font-normal">{calculated?.initialDeposit}pkr</span>
-            </p>
-            <p className="font-semibold">
-              Total Months:{" "}
-              <span className="font-normal">{calculated?.totalMonth}</span>
-            </p>
-            <p className="font-semibold">
-              Per Month Amount:{" "}
-              <span className="font-normal">{calculated?.permonthAmount}pkr</span>
-            </p>
-          </div>
-  }
+          {calculated && (
+            <div className="p-4 rounded-lg">
+              <p className="font-semibold">
+                Category:{" "}
+                <span className="font-normal">{calculated?.category}</span>
+              </p>
+              <p className="font-semibold">
+                SubCategory:{" "}
+                <span className="font-normal">{calculated?.subCategory}</span>
+              </p>
+              <p className="font-semibold">
+                Period:{" "}
+                <span className="font-normal">{calculated?.period} years</span>
+              </p>
+              <p className="font-semibold">
+                Total Amount:{" "}
+                <span className="font-normal">
+                  {calculated?.totalAmount}pkr
+                </span>
+              </p>
+              <p className="font-semibold">
+                Initial Deposit:{" "}
+                <span className="font-normal">
+                  {calculated?.initialDeposit}pkr
+                </span>
+              </p>
+              <p className="font-semibold">
+                Total Months:{" "}
+                <span className="font-normal">{calculated?.totalMonth}</span>
+              </p>
+              <p className="font-semibold">
+                Per Month Amount:{" "}
+                <span className="font-normal">
+                  {calculated?.permonthAmount}pkr
+                </span>
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </>

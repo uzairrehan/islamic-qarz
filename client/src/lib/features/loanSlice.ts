@@ -4,7 +4,7 @@ import { RootState } from "../store";
 
 
 const initialState: LoanState = {
-  value: {},
+  value: undefined,
 };
 
 export const loanSlice = createSlice({
@@ -15,7 +15,7 @@ export const loanSlice = createSlice({
       state.value = action.payload;
     },
     deleteLoan: (state) => {
-      state.value = {};
+      state.value = undefined;
     },
   },
 });

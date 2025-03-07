@@ -39,5 +39,5 @@ export interface CalculatedType {
 export type CategoryType = "Wedding" | "Home" | "Business" | "Education";
 
 export interface LoanState {
-  value: CalculatedType | {};
+  value: CalculatedType | undefined;
 }

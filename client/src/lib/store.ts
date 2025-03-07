@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-
+import  loanReducer  from './features/loanSlice'
 export const makeStore = () => {
   return configureStore({
-    reducer: {},
+    reducer: {
+      loan: loanReducer
+    },
   })
 }
 

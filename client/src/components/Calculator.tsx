@@ -6,6 +6,9 @@ import {
   maxPer,
   subCat,
 } from "@/constants/Loans";
+import { addLoan, deleteLoan, selectCount } from "@/lib/features/loanSlice";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { CalculatedType, CategoryType } from "@/types/loanType";
 import React, { useState } from "react";
 import { BiSend } from "react-icons/bi";
 
@@ -16,20 +19,12 @@ function Calculator() {
   const [amount, setAmount] = useState(0);
   const [initDeposit, setInitDeposit] = useState(0);
   const [text, setText] = useState("");
-  const [calculated, setCalculated] = useState<undefined | CalculatedType>(
-    undefined
-  );
+  const [calculated, setCalculated] = useState<undefined | CalculatedType>(undefined);
+  const value = useAppSelector(selectCount)
+  const dispatch = useAppDispatch()
 
-  type CategoryType = "Wedding" | "Home" | "Business" | "Education";
-  interface CalculatedType {
-    category: string;
-    subCategory: string;
-    period: number;
-    totalAmount: number;
-    initialDeposit: number;
-    totalMonth: number;
-    permonthAmount: number;
-  }
+
+
   function handleCalculate() {
     if (!category || !subCategory || !period || !amount || !initDeposit) {
       return setText("All fields are required!");
@@ -43,7 +38,7 @@ function Calculator() {
     if (initDeposit < InitialDepositConstant) {
       return setText("Initial deposit must be 50000");
     }
-    if (initDeposit < amount) {
+    if (initDeposit > amount) {
       return setText("Initial deposit must be less than total amount");
     }
     setText("");
@@ -60,8 +55,10 @@ function Calculator() {
       permonthAmount: permonthAmount,
     };
     setCalculated(result as CalculatedType);
+    dispatch(addLoan(result))
   }
-
+  console.log('================from state====================');
+  console.log(value);
   return (
     <>
       <div className="max-w-3xl mx-auto p-6 ">

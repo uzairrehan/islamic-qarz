@@ -25,3 +25,19 @@ export interface maxAmountType {
     Business: number;
     Education: number;
 }  
+
+
+
+export interface CalculatedType {
+    category: string;
+    subCategory: string;
+    period: number;
+    totalAmount: number;
+    initialDeposit: number;
+    totalMonth: number;
+    permonthAmount: number;
+  }
+
+
+
+  export type CategoryType = "Wedding" | "Home" | "Business" | "Education";

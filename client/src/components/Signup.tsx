@@ -6,7 +6,7 @@ import { RxCross2 } from "react-icons/rx";
 function Register({ dialog }:{dialog: Dispatch<SetStateAction<boolean>>}) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [CNIC, setCNIC] = useState("");
+  const [CNIC, setCNIC] = useState<number>();
 
   return (
     <>
@@ -32,7 +32,8 @@ function Register({ dialog }:{dialog: Dispatch<SetStateAction<boolean>>}) {
               required
               name="name"
               id="name"
-              className="w-full mt-1  h-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-black"
+              placeholder="Abdullah"
+              className="w-full mt-1  h-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-black px-2"
               onChange={(e) => {
                 setName(e.target.value);
               }}
@@ -47,7 +48,9 @@ function Register({ dialog }:{dialog: Dispatch<SetStateAction<boolean>>}) {
               required
               name="email"
               id="email"
-              className="w-full mt-1  h-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-black"
+              placeholder="ezample@me.com"
+              
+              className="w-full mt-1  h-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-black px-2"
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
@@ -58,13 +61,16 @@ function Register({ dialog }:{dialog: Dispatch<SetStateAction<boolean>>}) {
           <label htmlFor="CNIC" className="w-full">
             <h2 className="text-sm md:text-base font-extrabold mb-1">CNIC</h2>
             <input
-              type="text"
+              type="number"
               required
               name="CNIC"
               id="CNIC"
-              className="w-full mt-1  h-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-black"
+              min={13}
+              max={13}
+              placeholder="4540272940164"
+              className="w-full mt-1  h-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-black px-2"
               onChange={(e) => {
-                setCNIC(e.target.value);
+                setCNIC(Number(e.target.value));
               }}
               value={CNIC}
             />

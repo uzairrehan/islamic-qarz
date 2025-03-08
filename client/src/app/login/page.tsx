@@ -1,4 +1,5 @@
 "use client";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import React, { useState } from "react";
 import { IoLogInOutline } from "react-icons/io5";
@@ -60,6 +61,8 @@ function Login() {
           </button>
         </div>
       </div>
+      <Footer />
+
     </>
   );
 }

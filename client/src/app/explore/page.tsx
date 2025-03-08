@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { loanData } from "@/constants/Loans";
 import Calculator from "@/components/Calculator";
+import Footer from "@/components/Footer";
 
 
 function Explore() {
@@ -46,6 +47,8 @@ function Explore() {
           </div>
         ))}
       </div>
+      <Footer />
+
     </>
   );
 }

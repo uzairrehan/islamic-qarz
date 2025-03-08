@@ -8,9 +8,11 @@ import {
 } from "@/constants/Loans";
 import { addLoan, selectCount } from "@/lib/features/loanSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
-import { CalculatedType, CategoryType } from "@/types/loanType";
+import { CategoryType } from "@/types/loanType";
 import React, { useState } from "react";
 import { BiSend } from "react-icons/bi";
+import { FaArrowCircleRight } from "react-icons/fa";
+import Register from "./Signup";
 
 function Calculator() {
   const [category, setCategory] = useState<CategoryType>("Wedding");
@@ -19,6 +21,7 @@ function Calculator() {
   const [amount, setAmount] = useState(0);
   const [initDeposit, setInitDeposit] = useState(0);
   const [text, setText] = useState("");
+  const [registerDialog, setRegisterDialog] = useState<boolean>(false);
   const value = useAppSelector(selectCount);
   const dispatch = useAppDispatch();
 
@@ -55,6 +58,8 @@ function Calculator() {
   }
   console.log("================from state====================");
   console.log(value);
+  console.log(registerDialog);
+
   return (
     <>
       <div className="max-w-3xl mx-auto p-6 ">
@@ -216,10 +221,24 @@ function Calculator() {
                   </span>
                 </p>
               </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setRegisterDialog((val) => !val);
+                }}
+                className="w-36 mt-4 text-sm  bg-white text-[#081b33] p-2 border-2 rounded-3xl  px-6 font-bold flex gap-2  items-center justify-center hover:bg-slate-300 transition"
+              >
+                Proceed
+                <FaArrowCircleRight className="size-4" />
+              </button>
             </>
           ) : null}
         </div>
       </div>
+      {registerDialog ? <div className="w-full backdrop-blur fixed top-0 left-0 h-dvh pt-28 md:pt-20">
+
+          <Register dialog={setRegisterDialog}/>
+      </div> : null}
     </>
   );
 }
